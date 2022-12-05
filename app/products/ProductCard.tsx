@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Product } from "../../typings";
 
@@ -28,6 +29,12 @@ const ProductCard = ({ product }: ProductProps) => {
             <p className="text-gray-600 text-xs">
               Rented out by {product.owner}
             </p>
+            <Link
+              href={`/products/${product.id.toString()}`}
+              className="px-2 py-1 bg-blue-400 rounded-lg text-white mt-4"
+            >
+              See details and rent
+            </Link>
           </div>
         </div>
       </div>
