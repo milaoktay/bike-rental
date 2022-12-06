@@ -29,9 +29,10 @@ const ProductCard = ({ product }: ProductProps) => {
             <p className="text-gray-600 text-xs">
               Rented out by {product.owner}
             </p>
+            <p className="text-gray-700 text-base my-2">In {product.city}</p>
             <Link
               href={`/products/${product.id.toString()}`}
-              className="px-2 py-1 bg-blue-400 rounded-lg text-white mt-4"
+              className="px-2 py-1 bg-blue-400 rounded-lg text-white mt-2"
             >
               See details and rent
             </Link>

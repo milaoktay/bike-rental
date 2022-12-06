@@ -15,3 +15,7 @@ export type SingleProductProps = {
     productId: string;
   };
 };
+
+export type CityFilterProps = {
+  params: { city: string };
+};

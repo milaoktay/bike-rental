@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import Search from "./SelectLocation";
+import SelectLocation from "./SelectLocation";
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
       <Link href="/" className="px-2 py-1 bg-white rounded-lg">
         Home
       </Link>
-      <Search />
+      <SelectLocation />
     </header>
   );
 };

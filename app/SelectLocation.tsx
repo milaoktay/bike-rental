@@ -12,7 +12,6 @@ function SelectLocation() {
     router.push(`/${selection.toLowerCase()}`);
     setSelection("");
   };
-  console.log(selection);
 
   return (
     <form onSubmit={handleLocationSelection}>
