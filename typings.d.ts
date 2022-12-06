@@ -7,6 +7,7 @@ export type Product = {
   available: boolean;
   image: string;
   description: string;
+  city: string;
 };
 
 export type SingleProductProps = {

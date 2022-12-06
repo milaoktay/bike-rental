@@ -1,15 +1,21 @@
 import React from "react";
-import { Product, SingleProductProps } from "../../../typings";
+import { SingleProductProps } from "../../../typings";
 import { supabase } from "../../../utils/supabase";
 
 const fetchProduct = async (productId: string) => {
   const res = await supabase.from("bikes").select("*").eq("id", productId);
-
   return res.data;
 };
 
 async function SingleProduct({ params: { productId } }: SingleProductProps) {
-  let product = { title: "", image: "", description: "", price: "", owner: "" };
+  let product = {
+    title: "",
+    image: "",
+    description: "",
+    price: "",
+    owner: "",
+    city: "",
+  };
   const res = await fetchProduct(productId);
   if (res !== null) {
     [product] = res;
@@ -29,6 +35,7 @@ async function SingleProduct({ params: { productId } }: SingleProductProps) {
         <p className="text-gray-700 text-base mb-4">{product.description}</p>
         <p className="text-gray-600 text-xs">{product.price}€/day</p>
         <p className="text-gray-600 text-xs">Rented out by {product.owner}</p>
+        <p className="text-gray-700 text-base mb-4">{product.city}</p>
       </div>
     </>
   );
