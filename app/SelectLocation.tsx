@@ -9,7 +9,7 @@ function SelectLocation() {
 
   const handleLocationSelection = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push(`/products/${selection.toLowerCase()}`);
+    router.push(`/${selection.toLowerCase()}`);
     setSelection("");
   };
   console.log(selection);
