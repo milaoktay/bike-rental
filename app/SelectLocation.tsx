@@ -15,7 +15,7 @@ function SelectLocation() {
 
   return (
     <form onSubmit={handleLocationSelection}>
-      <div className="relative w-full lg:max-w-sm">
+      <div className="mt-2 ">
         <select
           onChange={(e) => {
             setSelection(e.target.value);
@@ -26,7 +26,12 @@ function SelectLocation() {
           <option>Hamburg</option>
           <option>Berlin</option>
         </select>
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          className="m-2 px-2 py-1 bg-white text-gray-700 rounded-lg font-medium"
+        >
+          Submit
+        </button>
       </div>
     </form>
   );
