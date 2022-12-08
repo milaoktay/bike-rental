@@ -1,6 +1,7 @@
 import React from "react";
 import { SingleProductProps } from "../../../typings";
 import { supabase } from "../../../utils/supabase";
+import Link from "next/link";
 
 const fetchProduct = async (productId: string) => {
   const res = await supabase.from("bikes").select("*").eq("id", productId);
