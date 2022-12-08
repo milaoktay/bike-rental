@@ -1,5 +1,5 @@
 import React from "react";
-import { CityFilterProps } from "../../typings";
+import { CityFilterProps, Product } from "../../typings";
 import { supabase } from "../../utils/supabase";
 import ProductCard from "../products/ProductCard";
 
@@ -9,7 +9,7 @@ const fetchProducts = async () => {
 };
 
 async function CityFilteredProducts({ params: { city } }: CityFilterProps) {
-  let products = await fetchProducts();
+  let products = (await fetchProducts()) as Product[];
 
   products = products?.filter((product) => product.city.toLowerCase() == city);
 
