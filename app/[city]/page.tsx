@@ -2,6 +2,7 @@ import React from "react";
 import { CityFilterProps, Product } from "../../typings";
 import { supabase } from "../../utils/supabase";
 import ProductCard from "../products/ProductCard";
+import Link from "next/link";
 
 const fetchProducts = async () => {
   const res = await supabase.from("bikes").select();
