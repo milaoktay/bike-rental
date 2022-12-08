@@ -1,7 +1,6 @@
 import React from "react";
 import { SingleProductProps } from "../../../typings";
 import { supabase } from "../../../utils/supabase";
-import Link from "next/link";
 
 const fetchProduct = async (productId: string) => {
   const res = await supabase.from("bikes").select("*").eq("id", productId);
@@ -24,7 +23,7 @@ async function SingleProduct({ params: { productId } }: SingleProductProps) {
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
         <h1 className="m-5 text-gray-900 text-xl font-medium mb-2">
           {product.title}
         </h1>
@@ -37,6 +36,9 @@ async function SingleProduct({ params: { productId } }: SingleProductProps) {
         <p className="text-gray-600 text-xs">{product.price}€/day</p>
         <p className="text-gray-600 text-xs">Rented out by {product.owner}</p>
         <p className="text-gray-700 text-base mb-4">{product.city}</p>
+        <button className="m-2 px-2 py-1 bg-blue-200 text-gray-700 rounded-lg font-medium text-xl">
+          Rent this bike
+        </button>
       </div>
     </>
   );
