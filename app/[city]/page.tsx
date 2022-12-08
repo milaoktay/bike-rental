@@ -14,7 +14,6 @@ async function CityFilteredProducts({ params: { city } }: CityFilterProps) {
 
   products = products?.filter((product) => product.city.toLowerCase() == city);
 
-  console.log(products);
   return (
     <div>
       {products?.map((product) => (
